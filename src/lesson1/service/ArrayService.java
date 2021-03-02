@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayService <T>{
-    public T[] swap(T[] array, int a, int b){
+    public T[] swap(T[] array, int a, int b) throws IllegalAccessException {
         if (array.length < 2 || a < 0 || a >= array.length || b < 0 || b >= array.length)
-            throw new RuntimeException("Bad array/indexes");
+            throw new IllegalAccessException("Bad array/indexes");
         T tmp = array[a];
         array[a] = array[b];
         array[b] = tmp;

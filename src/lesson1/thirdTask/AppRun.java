@@ -21,7 +21,11 @@ public class AppRun {
         for (Fruit fruit : appleBox1.getFruits()){
             System.out.println(fruit);
         }
-        service.replaceFruits(appleBox1, appleBox2);
+        try {
+            service.replaceFruits(appleBox1, appleBox2);
+        } catch (IllegalAccessException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("\nApple box 2:");
         for (Fruit fruit : appleBox2.getFruits()){
             System.out.println(fruit);

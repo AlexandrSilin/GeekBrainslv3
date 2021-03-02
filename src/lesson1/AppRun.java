@@ -19,7 +19,11 @@ public class AppRun {
         }
 
         System.out.println("\nEdited array:");
-        objects = arrayService.swap(objects, 0, 1);
+        try {
+            objects = arrayService.swap(objects, 0, 1);
+        } catch (IllegalAccessException e) {
+            System.out.println(e.getMessage());
+        }
         for (Object o : objects){
             System.out.println(o);
         }
