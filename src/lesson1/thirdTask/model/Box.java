@@ -12,23 +12,14 @@ public class Box <T extends Fruit>{
         weight = 0;
     }
 
-    public Box(ArrayList<T> fruits){
-        weight = 0;
-        this.fruits = fruits;
-        for (Fruit fruit : fruits){
-            weight += fruit.getWeight();
-        }
+    public boolean isEmpty(){
+        return fruits.isEmpty();
     }
 
-    public void replaceFruits(Box<T> box){
-        for (int i = fruits.size() - 1; i >= 0; i--){
-            T fruit = fruits.get(i);
-            box.add(fruit);
-            weight -= fruit.getWeight();
-            fruits.remove(fruit);
-        }
+    public T remove(){
+        return fruits.remove(fruits.size() - 1);
     }
-    
+
     public ArrayList<T> getFruits(){
         return (ArrayList<T>) fruits;
     }

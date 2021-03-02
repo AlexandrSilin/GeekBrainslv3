@@ -4,9 +4,11 @@ import lesson1.thirdTask.model.Apple;
 import lesson1.thirdTask.model.Box;
 import lesson1.thirdTask.model.Fruit;
 import lesson1.thirdTask.model.Orange;
+import lesson1.thirdTask.service.BoxService;
 
 public class AppRun {
     public static void main(String[] args) {
+        BoxService service = new BoxService();
         Box<Apple> appleBox1 = new Box<>();
         Box<Apple> appleBox2 = new Box<>();
         Box<Orange> orangeBox = new Box<>();
@@ -19,7 +21,7 @@ public class AppRun {
         for (Fruit fruit : appleBox1.getFruits()){
             System.out.println(fruit);
         }
-        appleBox1.replaceFruits(appleBox2);
+        service.replaceFruits(appleBox1, appleBox2);
         System.out.println("\nApple box 2:");
         for (Fruit fruit : appleBox2.getFruits()){
             System.out.println(fruit);
