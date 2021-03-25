@@ -1,4 +1,5 @@
 import lesson6.Array;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -29,5 +30,10 @@ public class ArrayTest {
         assertTrue(array.checkArrayForElements(new int [] {1, 2, 3, 4, 1}));
         assertTrue(array.checkArrayForElements(new int [] {3, 4, 14, 1, 4}));
         assertTrue(array.checkArrayForElements(new int [] {11, 2, 3, 44, 2, 3, 14, 44, 5}));
+    }
+
+    @AfterAll
+    public static void destroy() {
+        array = null;
     }
 }
