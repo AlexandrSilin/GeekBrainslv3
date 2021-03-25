@@ -16,7 +16,7 @@ public class Test {
     }
 
     public static void start(String name) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        start(Class.forName(name).newInstance().getClass());
+        start(Class.forName(name));
     }
 
     public static void start(Class aClass) throws IllegalAccessException, InstantiationException, InvocationTargetException {
