@@ -19,7 +19,7 @@ public class Test {
         start(Class.forName(name).newInstance().getClass());
     }
 
-    public static boolean start(Class aClass) throws IllegalAccessException, InstantiationException, InvocationTargetException {
+    public static void start(Class aClass) throws IllegalAccessException, InstantiationException, InvocationTargetException {
         Method[] methods = aClass.getDeclaredMethods();
         for (int i = 0; i < methods.length; i++){
             if (methods[i].getAnnotation(BeforeSuite.class) != null){
@@ -51,6 +51,5 @@ public class Test {
         if (after != -1){
             methods[after].invoke(test);
         }
-        return true;
     }
 }
